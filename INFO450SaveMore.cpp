@@ -161,8 +161,8 @@ public:
 	}
 	void updateAccount(int term)
 	{
-		accountTerm = a;
-		if (a >= 5) {
+		accountTerm = term;
+		if (term >= 5) {
 			interest = 10;
 		}
 		else {
@@ -183,8 +183,8 @@ public:
 	{
 		//10% fee for withdraw early
 		int penalty = 10;
-		w -= (balance * (penalty / 100));
-		BankAccount::withdraw(w);
+		amount -= (balance * (penalty / 100));
+		BankAccount::withdraw(amount);
 		updateAccount(accountTerm);
 		return (0);
 	}
