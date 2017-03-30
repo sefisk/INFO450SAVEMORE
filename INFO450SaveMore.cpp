@@ -95,14 +95,14 @@ public:
 		balance += (balance * (interest / 100));
 		updateAccount();
 	}
-	int deposit(double d)
+	int deposit(double amount)
 	{
-		BankAccount::deposit(d);
+		BankAccount::deposit(amount);
 		updateAccount();
 		return (0);
 
 	}
-	int withdraw(double w)
+	int withdraw(double amount)
 	{
 		//Withdraw with $2 fee
 		BankAccount::withdraw(w + 2);
@@ -135,16 +135,16 @@ public:
 		BankAccount::balanceChecker(15);
 		balance -= 15;
 	}
-	int deposit(double d)
+	int deposit(double amount)
 	{
-		BankAccount::deposit(d);
+		BankAccount::deposit(amount);
 		updateAccount();
 		return (0);
 
 	}
-	int withdraw(double w)
+	int withdraw(double amount)
 	{
-		BankAccount::withdraw(w);
+		BankAccount::withdraw(amount);
 		updateAccount();
 		return (0);
 	}
@@ -159,7 +159,7 @@ public:
 		//Checking = "1" Saving = "2" CD = "3"
 		accountType = 3;
 	}
-	void updateAccount(int a)
+	void updateAccount(int term)
 	{
 		accountTerm = a;
 		if (a >= 5) {
@@ -169,17 +169,17 @@ public:
 			interest = 5;
 		}
 	}
-	int deposit(double a, int b)
+	int deposit(double amount, int term)
 	{
-		BankAccount::deposit(a);
-		updateAccount(b);
+		BankAccount::deposit(amount);
+		updateAccount(term);
 		return (0);
 	}
 	void interestpaid()
 	{
 		balance += (balance * (interest / 100));
 	}
-	int withdraw(double w)
+	int withdraw(double amount)
 	{
 		//10% fee for withdraw early
 		int penalty = 10;
