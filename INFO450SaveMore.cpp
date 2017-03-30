@@ -34,6 +34,8 @@ void BankAccount::display()
 	}
 	else if (accountType == 3) {
 		accName = "Certificate of Deposit";
+	} else { 
+		accName = "Unknown";
 	}
 		cout << "Account Opened: " << openMonth << "/" << openDay << "/" << openYear << endl;
 		cout << "Account Number: " << accountID << endl;
